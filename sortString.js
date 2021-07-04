@@ -1,5 +1,6 @@
-const radixSort= require('./utility/radixSort');
+const radixSort = require('./utility/radixSort');
 
+const join = require('./utility/join');
 
 // time complexity of n * (k + 19) ~ n * k
 let radixVersion = radixSort('mengapa dia berjalan sementara zebra berlari?')
@@ -8,5 +9,6 @@ let radixVersion = radixSort('mengapa dia berjalan sementara zebra berlari?')
 
 let builtInVersion = 'mengapa dia berjalan sementara zebra berlari?'.split('').sort((a,b) => a.codePointAt(0) - b.codePointAt(0))
 
-console.log(radixVersion.join(' ') === builtInVersion.join(' '))
+
+console.log(join(radixVersion) === join(builtInVersion))
 
