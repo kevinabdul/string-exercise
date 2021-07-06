@@ -13,7 +13,7 @@ function radixSort(collections) {
 	for (let i = 0; i < 19; i++) {
 		bucket.push([])
 	}
-	let num, result = collections;;
+	let num, result = collections;
 
 	for (let i = 0; i < digitCount; i++) {
 		for (let j = 0; j < result.length; j++) {
@@ -47,7 +47,13 @@ function getDigit(num, index) {
 }
 
 function longestDigit(numArr) {
-	return String(Math.max(...numArr)).length;
+	let result = 0;
+	let len;
+	for (let num of numArr) {
+		len = String(Math.abs(num)).length;
+		result = len > result ? len : result;
+	}
+	return result;
 }
 
 module.exports = radixSort;
